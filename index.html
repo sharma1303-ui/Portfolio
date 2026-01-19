@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Sharma | Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ================== General Reset ================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: rgb(0, 0, 33);
+            color: white;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ================== Navbar ================== */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(18, 18, 62);
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: rgb(131, 131, 175);
+        }
+
+        nav .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* ================== Hero Section ================== */
+        .firstSection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 120px auto;
+            position: relative;
+        }
+
+        .leftSection {
+            font-size: 25px;
+        }
+
+        .leftSection .purple {
+            color: rgb(170, 107, 228);
+        }
+
+        /* Hero Buttons */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .hero-buttons .resume-btn {
+            background: #1e2167;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .hero-buttons .resume-btn:hover {
+            background: #9c97f1;
+            color: #0b0b33;
+            transform: translateY(-2px);
+        }
+
+        .hero-buttons .github-btn {
+            background: white;
+            color: #1e2167;
+            border: 2px solid #1e2167;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .hero-buttons .github-btn:hover {
+            background: #e6e6e6;
+            color: #0b0b33;
+            transform: translateY(-2px);
+        }
+
+        /* Right Section (Profile Image) */
+        .rightSection {
+            position: relative;
+        }
+
+        .rightSection img {
+            width: 280px;
+            height: 500px;
+            border-radius: 20px;
+            border: 4px solid #9c97f1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0px, 0px);
+            }
+
+            25% {
+                transform: translate(5px, -5px);
+            }
+
+            50% {
+                transform: translate(0px, -10px);
+            }
+
+            75% {
+                transform: translate(-5px, -5px);
+            }
+
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        /* ================== Sections spacing ================== */
+        section {
+            max-width: 80vw;
+            margin: auto;
+            padding: 60px 0;
+        }
+
+        hr {
+            border: 0;
+            background: #9c97f1;
+            height: 1.2px;
+            margin: 40px 0;
+        }
+
+        /* ================== About Section ================== */
+        .aboutSection h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .aboutSection p {
+            font-size: 1rem;
+            color: #cfcfcf;
+            line-height: 1.8;
+        }
+
+        /* ================== Skills Section ================== */
+        .secondSection h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .box {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .vertical {
+            width: 200px;
+            text-align: center;
+        }
+
+        .image-top {
+            width: 40px;
+        }
+
+        .vertical-title {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .vertical-desc {
+            font-size: 14px;
+            color: #9c97f1;
+        }
+
+        /* ================== Certificates Section ================== */
+        .certificateSection h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .certificate-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .certificate-card {
+            width: 260px;
+            background: linear-gradient(135deg, #0b0b33, #28282e);
+            padding: 15px;
+            border-radius: 18px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            background: #ffffff;
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .certificate-card h3 {
+            margin-top: 12px;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .certificate-card p {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+        }
+
+        .cert-btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 18px;
+            background: #ffffff;
+            color: #0b0b33;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cert-btn:hover {
+            background: #e6e6e6;
+            transform: scale(1.05);
+        }
+
+        /* ================== Projects Section ================== */
+        .projectsSection h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .project-card {
+            background: rgb(18, 18, 62);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card h3 {
+            color: #9c97f1;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #cfcfcf;
+            line-height: 1.7;
+        }
+
+        .project-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-links .btn {
+            padding: 10px 20px;
+            background: #1e2167;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .project-links .btn:hover {
+            background: #9c97f1;
+            color: #0b0b33;
+        }
+
+        /* ================== Contact Section ================== */
+        .contactSection {
+            max-width: 80vw;
+            margin: auto;
+            padding: 60px 0;
+            text-align: left;
+        }
+
+        .contactSection h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contactSection p {
+            color: #cfcfcf;
+            margin-bottom: 40px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: none;
+        }
+
+        .contact-form .btn {
+            width: fit-content;
+            padding: 12px 25px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .contact-social {
+            flex: 0.4;
+            min-width: 200px;
+        }
+
+        .contact-social h3 {
+            margin-bottom: 15px;
+        }
+
+        .contact-social a {
+            display: block;
+            margin-bottom: 10px;
+            color: #9c97f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-social a:hover {
+            color: #aa6be4;
+        }
+
+       /* ================= Footer ================= */
+
+footer {
+    background-color: #2b192b;
+    padding: 25px 0;
+    text-align: center;
+}
+
+/* Footer Navigation Buttons */
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #9c97f1;
+}
+
+/* Footer Resume Button */
+.footer-nav .resume-btn {
+     
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.footer-nav a:hover{
+    color: #9c97f1;
+}
+
+
+/* Copyright Text */
+.footer-rights {
+    color: gray;
+    font-size: 14px;
+    margin-top: 10px;
+}
+        /* ================== Responsive ================== */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin: 8px 0;
+            }
+
+            .firstSection {
+                flex-direction: column-reverse;
+                text-align: center;
+                margin: 60px 0;
+            }
+
+            .firstSection>div {
+                width: 95%;
+            }
+
+            .rightSection img {
+                width: 70%;
+                margin-bottom: 25px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .box,
+            .certificate-container,
+            .project-links {
+                justify-content: center;
+            }
+
+            .vertical,
+            .certificate-card {
+                margin-bottom: 30px;
+            }
+
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-social {
+                text-align: center;
+            }
+        }
+
+        #scrollBtn {
+    display: none; 
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: rgb(111, 14, 190); 
+    color: white;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#scrollBtn:hover {
+    background-color: #9156c5;
+    transform: scale(1.1); 
+}
+
+/* Cloud-shaped button jo page ke saath move hoga */
+
+.cloud-btn {
+    background-color: white !important;
+    color: #000021 !important; 
+    padding: 10px 20px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    
+    /* Ye border-radius badal jaisa irregular shape banata hai */
+
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    
+    /* Halki shadow taaki ye ubhra hua dikhe */
+
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.cloud-btn:hover {
+    background-color: #9653b5 !important;
+    color: white !important;
+    transform: scale(1.1);
+
+    /* Hover par cloud ka shape thoda badlega */
+
+    border-radius: 40% 60% 70% 30% / 50% 60% 30% 60%;
+}
+
+/* Navbar items ko sahi align karne ke liye */
+
+nav ul {
+    display: flex;
+    align-items: center; 
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- ================== HEADER ================== -->
+    <header>
+        <nav>
+            <div class="left">Rohit Sharma</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="Rohit_Sharma_Resume.pdf"download>Resume</a></li>
+                    <li><a href="#contact" class="cloud-btn">Hire Me </a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home">
+
+        <!-- ================== HERO SECTION ================== -->
+        <section class="firstSection">
+    <div class="leftSection">
+        <h1>Hi, I'm <span class="purple">Rohit Sharma</span></h1>
+        
+        <p>I am a passionate <span id="element" class="purple"></span></p>
+
+        <div class="hero-buttons">
+            <a href="Rohit_Sharma_Resume.pdf" download class="btn resume-btn">
+                Download Resume
+            </a>
+            <a href="https://github.com/rohit-sharma" target="_blank" class="btn github-btn">
+                GitHub
+            </a>
+        </div>
+    </div>
+
+    <div class="rightSection">
+        <img src="profile.png" alt="Rohit Sharma">
+    </div>
+    
+</section>
+        <hr>
+
+        <!-- ================== ABOUT SECTION ================== -->
+        <section class="aboutSection" id="about">
+            <h1>About Me</h1>
+            <p>
+                I am a passionate Web Developer and fresher with strong knowledge of
+                HTML, CSS, JavaScript. I enjoy building responsive and user-friendly
+                websites and continuously improving my skills through projects and practice.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- ================== SKILLS SECTION ================== -->
+        <section class="secondSection" id="skills">
+            <h1>Skills</h1>
+            <div class="box">
+                <div class="vertical">
+                    <img class="image-top" src="hg.png" alt="">
+                    <div class="vertical-title">HTML Developer (2025)</div>
+                    <div class="vertical-desc">Created college projects & portfolio websites.</div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="cssg.png" alt="">
+                    <div class="vertical-title">CSS Developer (2025)</div>
+                    <div class="vertical-desc">Responsive & modern UI designs.</div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="jsg.png" alt="">
+                    <div class="vertical-title">JavaScript (2025)</div>
+                    <div class="vertical-desc">Interactive frontend features.</div>
+                </div>
+                <div class="vertical">
+                    <img class="image-top" src="cl.png" alt="">
+                    <div class="vertical-title">C Language</div>
+                    <div class="vertical-desc">Good programming fundamentals.</div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ================== CERTIFICATES SECTION ================== -->
+        <section class="certificateSection" id="certificates">
+            <h1>Certificates</h1>
+            <div class="certificate-container">
+                <div class="certificate-card">
+                    <img src="cg.png" alt="Web Development Certificate">
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS & Bootstrap</p>
+                    <a href="cg.png" target="_blank" class="cert-btn">View Certificate</a>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ================== PROJECTS SECTION ================== -->
+        <section class="projectsSection" id="projects">
+            <h1>Projects</h1>
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+                <p>
+                    Designed and developed a responsive personal portfolio website using
+                    HTML and CSS. The website includes About, Skills, Certificates,
+                    Projects and Contact sections with smooth scrolling navigation.
+                </p>
+                <div class="project-links">
+                    <a href="#" class="btn">Live Demo</a>
+                    <a href="#" class="btn">Source Code</a>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ================== CONTACT SECTION ================== -->
+        <section class="contactSection" id="contact">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out to me via email or connect with me on social media.</p>
+
+            <div class="contact-container">
+
+                <!-- Contact Form -->
+                <form class="contact-form" action="mailto:your.email@example.com" method="POST"
+                    enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+
+                <!-- Social Links -->
+                <div class="contact-social">
+                    <h3>Connect with me</h3>
+                    <a href="https://github.com/rohit-sharma" target="_blank">GitHub</a>
+                    <a
+                        href="https://www.linkedin.com/in/rohit-sharma-8a7398334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank">LinkedIn</a>
+                    <a href="mailto:sharma1303204@gmail.com">Email</a>
+                    <a href="Rohit_Sharma_Resume.pdf" download class="resume-btn">Download Resume</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================== FOOTER ================== -->
+   <footer class="footer">
+
+    <!-- Footer Navigation Buttons -->
+    <div class="footer-nav">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="Rohit_Sharma_Resume.pdf" download class="resume-btn">Resume</a>
+        
+    </div>
+
+    <!-- Copyright -->
+    <p class="copyright">
+        © 2026 Rohit Sharma | All Rights Reserved
+    </p>
+
+</footer>
+
+<button id="scrollBtn"title="Go to top">↑</button>
+
+    <!-- Typed JS -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Software Developer', 'Web Designer', 'Programmer'],
+            typeSpeed: 50,
+            loop: true
+        });
+
+        // Button in JS Control
+let mybutton = document.getElementById("scrollBtn");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+};
+
+// One Click Btn
+
+mybutton.onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' 
+    });
+};
+
+        </script>
+
+        </body>
+
+        </html>
